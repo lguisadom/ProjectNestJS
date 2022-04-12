@@ -18,6 +18,11 @@ export class ProductsController {
         return `Estás consultando el producto con id: ${params.id}, con tamaño: ${params.size}`;
     }
 
+    @Get('/v2/:id/:size')
+    findByIdAndSize2(@Param("id") id: number, @Param("size") size: string): string {
+        return `Estás consultando el producto con id: ${id}, con tamaño: ${size}`;
+    }
+
     @Get("/hot")
     getSpecialProducts() : string {
         return "Te vamos a mostrar los productos más calientes!!!";
