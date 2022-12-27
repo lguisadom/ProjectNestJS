@@ -8,7 +8,7 @@ export class PokemonController {
   @Get()
   async listarPokemones(): Promise<string[]> {
     console.log('Listando pokemones');
-    const pokemones = await this.pokemonService.listarPokemones();
+    const pokemones = await this.pokemonService.listarPokemones2();
     return pokemones;
   }
 }
