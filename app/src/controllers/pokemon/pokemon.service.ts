@@ -1,9 +1,12 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 
 @Injectable()
 export class PokemonService {
-  constructor(private readonly httpService: HttpService) {}
+  // constructor(private readonly httpService: HttpService) {}
+  constructor(
+    @Inject('HTTP_PROVIDER') private readonly httpService: HttpService
+  ) {}
 
   async listarPokemones(): Promise<string[]> {
     return ['pikachu', 'charmander', 'squartle', 'bulbasur'];

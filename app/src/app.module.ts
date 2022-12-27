@@ -4,8 +4,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductsController } from './controllers/products/products.controller';
 import { UsersController } from './controllers/users/users.controller';
-import { PokemonController } from './pokemon/pokemon.controller';
-import { PokemonService } from './pokemon/pokemon.service';
+import { PokemonController } from './controllers/pokemon/pokemon.controller';
+import { PokemonService } from './controllers/pokemon/pokemon.service';
+import { HttpProvider } from 'src/utils/http.provider';
 
 @Module({
   imports: [HttpModule],
@@ -15,6 +16,9 @@ import { PokemonService } from './pokemon/pokemon.service';
     UsersController,
     PokemonController,
   ],
-  providers: [AppService, PokemonService],
+  providers: [
+    AppService, 
+    PokemonService,
+    ...HttpProvider],
 })
 export class AppModule {}
