@@ -1,5 +1,4 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { ppid } from 'process';
 import { ProductRequest } from './product.request';
 
 @Controller('products')
