@@ -11,7 +11,9 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [HttpModule, 
-    ConfigModule.forRoot()],
+    ConfigModule.forRoot({
+      envFilePath: ['.env.local']
+    })],
   controllers: [
     AppController,
     ProductsController,
